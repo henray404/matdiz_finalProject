@@ -1,3 +1,10 @@
+import streamlit as st
+
+st.set_page_config(page_title="final_project",
+                   page_icon=":tada:", layout="wide")
+st.title("Final Project")
+
+
 def bmi(tinggi, berat):
     return berat / (tinggi ** 2)
 
