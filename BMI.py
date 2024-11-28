@@ -18,3 +18,5 @@ def bfp(bmi, umur, gender):
         return bmi * (1.2 * bmi + 0.23 (umur - 16.2))
     elif gender == "perempuan":
         return bmi * (1.2 * bmi + 0.23 (umur - 5.4))
+
+#test
