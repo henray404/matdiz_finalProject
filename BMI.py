@@ -138,7 +138,7 @@ st.markdown("""
         <h2>Meet the team</h2>
         <div class="team">
             <div>
-                <img src="https://storage.googleapis.com/a1aa/image/ebLyfSE5IogXW04gG88gpfDWugereO9Hl93YmRHTG4ptr9reE.jpg" alt="Team member 1 smiling">
+                <img src="MATDIZ_FINALPROJECT/gmbr/vito.jpg" alt="Team member 1 smiling">
                 <div>
                     <p class="font-bold">Anggota 1</p>
                     <p>Arvito Rajapandya Natlysandro</p>
