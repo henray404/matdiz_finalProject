@@ -1,7 +1,10 @@
 import streamlit as st
-
-# Set page configuration
-st.set_page_config(page_title="FP MATDIS", layout="wide")
+st.set_page_config(
+    page_title ="FP Matdis",
+    page_icon="📝",
+)
+st.title ("Halaman Utama")
+st.sidebar.success("Cap cip cup")
 
 # Custom CSS for styling
 st.markdown("""
@@ -205,3 +208,4 @@ st.markdown("""
         </div>
     </div>
 """, unsafe_allow_html=True)
+
