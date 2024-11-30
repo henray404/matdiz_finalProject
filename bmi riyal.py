@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st #ini tempat naro kode (biar copas)
 from streamlit_option_menu import option_menu
 
 # Function to calculate BMI
