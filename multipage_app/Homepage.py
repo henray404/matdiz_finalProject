@@ -1,10 +1,22 @@
 import streamlit as st
 st.set_page_config(
-    page_title ="FP Matdis",
+    page_title="FP Matdis",
     page_icon="📝",
 )
-st.title ("Halaman Utama")
+st.title("Halaman Utama")
 st.sidebar.success("Cap cip cup")
+
+
+st.markdown("""
+    <style>
+    .rounded-img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 # Custom CSS for styling
 st.markdown("""
@@ -111,66 +123,75 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Main content
+
+# Main content
 st.markdown("""
     <div class="section">
         <h1>About Our Final Project</h1>
         <p>Pada final project matematika diskrit kali ini kami membuat sebuah program untuk menghitung body mass index dan membuat sistem bracket. Hal ini kami lakukan karena kami merasa kedua hal tersebut banyak di temui di kehidupan sehari-hari. Jadi kami sangat berharap final project kali ini dapat dipergunakan dalam dunia nyata dan semoga dengan project ini kami dapat mengembangkan kemampuan kami lebih jauh lagi.</p>
     </div>
-    <div class="section">
-        <h2>Choose Final Project</h2>
-        <div class="project-choice">
-            <div>
-                <img src="https://storage.googleapis.com/a1aa/image/O5ATwXKjBFbdOtPlS8tO9xeQapVmhPOqnjFHc4y4MKtt2v6JA.jpg" alt="Colorful BMI meter" width="200" height="200">
-                <p class="font-bold">BODY MASS INDEX (BMI)</p>
-            </div>
-            <div>
-                <img src="https://storage.googleapis.com/a1aa/image/gmoUsZ8E3Jb1H1tlQrfEzmfMg4mVSVEgc4OFdC8YFUZgtfqnA.jpg" alt="Bracket system with a trophy" width="200" height="200">
-                <p class="font-bold">BRACKET SYSTEM</p>
-            </div>
-        </div>
-    </div>
+""", unsafe_allow_html=True)
+
+# Using st.columns to arrange the project choices side by side
+col1, col2 = st.columns(2)
+
+with col1:
+    st.image("https://storage.googleapis.com/a1aa/image/O5ATwXKjBFbdOtPlS8tO9xeQapVmhPOqnjFHc4y4MKtt2v6JA.jpg",
+             caption="Colorful BMI meter", width=200)
+    st.markdown("<p class='font-bold'>BODY MASS INDEX (BMI)</p>",
+                unsafe_allow_html=True)
+
+with col2:
+    st.image("https://storage.googleapis.com/a1aa/image/gmoUsZ8E3Jb1H1tlQrfEzmfMg4mVSVEgc4OFdC8YFUZgtfqnA.jpg",
+             caption="Bracket system with a trophy", width=200)
+    st.markdown("<p class='font-bold'>BRACKET SYSTEM</p>",
+                unsafe_allow_html=True)
+
+# What is BMI
+st.markdown("""
     <div class="section">
         <h2>What is BMI?</h2>
         <p>BMI (Body Mass Index) adalah pengukuran sederhana untuk menilai status berat badan seseorang berdasarkan berat badan (kg) dan tinggi badan (m) kuadrat. Indeks ini digunakan untuk mengkategorikan seseorang ke dalam status seperti kurus, normal, atau obesitas.</p>
     </div>
+""", unsafe_allow_html=True)
+
+# What is Bracket System
+st.markdown("""
     <div class="section">
         <h2>What is Bracket System?</h2>
         <p>Sistem bracket adalah format kompetisi di mana peserta diatur dalam struktur seperti pohon. Pemenang melanjutkan ke babak berikutnya hingga diperoleh pemenang akhir.</p>
     </div>
+""", unsafe_allow_html=True)
+
+# Team Section with images
+st.markdown("""
     <div class="section">
         <h2>Meet the team</h2>
-        <div class="team">
-            <div>
-                <img src="MATDIZ_FINALPROJECT/gmbr/vito.jpg" alt="Team member 1 smiling">
-                <div>
-                    <p class="font-bold">Anggota 1</p>
-                    <p>Arvito Rajapandya Natlysandro</p>
-                    <p>5054241046</p>
-                    <p class="italic">“jangan lupa untuk senyum”</p>
-                </div>
-            </div>
-            <div>
-                <img src="https://storage.googleapis.com/a1aa/image/WGVYeTWWgsylQSeqCmwuYHugHbGnP9SBQmXcR9N9U10ctfqnA.jpg" alt="Team member 2 with a scenic background">
-                <div>
-                    <p class="font-bold">Anggota 2</p>
-                    <p>Mochammad Henry Alifian</p>
-                    <p>5054241024</p>
-                    <p class="italic">“nahhh, imma do my own thing”</p>
-                </div>
-            </div>
-            <div>
-                <img src="https://storage.googleapis.com/a1aa/image/MM7sezguqfumd0flweD4i5vfQnXyzM4BRGEgcYYmWaQ9r9reE.jpg" alt="Team member 3 holding a 3D printed object">
-                <div>
-                    <p class="font-bold">Anggota 3</p>
-                    <p>Nazhif Berlian Nashrullah</p>
-                    <p>5054241035</p>
-                    <p class="italic">“bismillah aja”</p>
-                </div>
-            </div>
-        </div>
     </div>
 """, unsafe_allow_html=True)
 
+# Using st.columns for team members side by side
+col1, col2, col3 = st.columns(3)
+
+
+with col1:
+    st.image("gmbr/vito.jpg", caption="Anggota 1: Arvito Rajapandya Natlysandro",
+             width=200, clamp=True)
+    st.markdown("<p class='font-bold'>Arvito Rajapandya Natlysandro</p>",
+                unsafe_allow_html=True)
+
+with col2:
+
+    st.markdown('<img src="gmbr/vito.jpg" class="rounded-img" width="200" height="200">',
+                unsafe_allow_html=True)
+    st.markdown("<p class='font-bold'>Mochammad Henry Alifian</p>",
+                unsafe_allow_html=True)
+
+with col3:
+    st.image("gmbr/ajip.jpg",
+             caption="Anggota 3: Nazhif Berlian Nashrullah", width=200, clamp=True)
+    st.markdown("<p class='font-bold'>Nazhif Berlian Nashrullah</p>",
+                unsafe_allow_html=True)
 # Footer
 st.markdown("""
     <div class="footer">
@@ -208,4 +229,3 @@ st.markdown("""
         </div>
     </div>
 """, unsafe_allow_html=True)
-
