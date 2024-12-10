@@ -5,6 +5,9 @@ from random import shuffle
 if "name_list" not in st.session_state:
     st.session_state.name_list = {"name": [], "ranking": []}
 
+if "current_round" not in st.session_state:
+    st.session_state.current_round = []
+
 # Judul aplikasi
 st.title("Bracket Generator")
 
@@ -59,13 +62,14 @@ if st.session_state.name_list["name"]:
 else:
     st.info("Belum ada kompetitor yang ditambahkan.")
 
-# Fitur penandingan
-st.subheader("Tandingkan Kompetitor")
-if st.button("Tandingkan Kompetitor"):
+# Fitur pembuatan pasangan acak
+st.subheader("Pasangkan Kompetitor")
+if st.button("Buat Bracket Acak"):
     if len(st.session_state.name_list["name"]) < 2:
-        st.warning("Minimal dua kompetitor diperlukan untuk bertanding.")
+        st.warning("Minimal dua kompetitor diperlukan untuk membuat ronde.")
     else:
-        # Buat daftar pairing
+        # Reset current_round
+        st.session_state.current_round = []
         competitors = list(
             zip(st.session_state.name_list["name"],
                 st.session_state.name_list["ranking"])
@@ -76,8 +80,11 @@ if st.button("Tandingkan Kompetitor"):
         if len(competitors) % 2 != 0:
             competitors.append(("Bye", 0))
 
-        # Tampilkan pasangan pertandingan
-        st.subheader("Pasangan Pertandingan")
-        for i in range(0, len(competitors), 2):
-            c1, c2 = competitors[i], competitors[i + 1]
-            st.write(f"{c1[0]} (Rating: {c1[1]}) vs {c2[0]} (Rating: {c2[1]})")
+        st.session_state.current_round = competitors
+
+# Tampilkan ronde acak
+if st.session_state.current_round:
+    st.subheader("Hasil Acak")
+    for i in range(0, len(st.session_state.current_round), 2):
+        c1, c2 = st.session_state.current_round[i], st.session_state.current_round[i + 1]
+        st.write(f"{c1[0]} (Rating: {c1[1]}) vs {c2[0]} (Rating: {c2[1]})")

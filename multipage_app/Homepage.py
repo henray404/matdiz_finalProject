@@ -1,7 +1,7 @@
 import streamlit as st
 st.set_page_config(
     page_title="FP Matdis",
-    page_icon="📝",
+    page_icon="😜",
 )
 st.title("Halaman Utama")
 st.sidebar.success("Cap cip cup")
@@ -175,57 +175,20 @@ col1, col2, col3 = st.columns(3)
 
 
 with col1:
-    st.image("gmbr/vito.jpg", caption="Anggota 1: Arvito Rajapandya Natlysandro",
-             width=200, clamp=True)
+    st.image("gmbr/vito.jpg", caption="5054241046",
+             width=180, clamp=True)
     st.markdown("<p class='font-bold'>Arvito Rajapandya Natlysandro</p>",
                 unsafe_allow_html=True)
 
 with col2:
 
-    st.markdown('<img src="gmbr/vito.jpg" class="rounded-img" width="200" height="200">',
-                unsafe_allow_html=True)
+    st.image("gmbr/henry.jpg", caption="5054241024 ",
+             width=200, clamp=True)
     st.markdown("<p class='font-bold'>Mochammad Henry Alifian</p>",
                 unsafe_allow_html=True)
 
 with col3:
-    st.image("gmbr/ajip.jpg",
-             caption="Anggota 3: Nazhif Berlian Nashrullah", width=200, clamp=True)
+    st.image("gmbr/ajip.jpg", caption='5054241024',
+             width=200, clamp=True)
     st.markdown("<p class='font-bold'>Nazhif Berlian Nashrullah</p>",
                 unsafe_allow_html=True)
-# Footer
-st.markdown("""
-    <div class="footer">
-        <div class="footer-content">
-            <div>
-                <p class="font-bold">FINAL PROJECT</p>
-                <p>MATEMATIKA DISKRITTTTT</p>
-            </div>
-            <div>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footer-links">
-            <div>
-                <p class="font-bold">Topic</p>
-                <p>Page</p>
-                <p>Page</p>
-                <p>Page</p>
-            </div>
-            <div>
-                <p class="font-bold">Topic</p>
-                <p>Page</p>
-                <p>Page</p>
-                <p>Page</p>
-            </div>
-            <div>
-                <p class="font-bold">Topic</p>
-                <p>Page</p>
-                <p>Page</p>
-                <p>Page</p>
-            </div>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
