@@ -9,8 +9,8 @@ def calculate_bmi(weight, height):
     return (weight) / ((height/100) ** 2)  # Ubah Ke cm!
 
 
-def calculate_body(weight, height):
-    return height/(weight**2)
+def calculate_body(waist, height):
+    return waist/(height)
 
 
 def calculate_fat(weight, height, umur):
@@ -33,12 +33,12 @@ def display_bmi_result(bmi):
         st.write("KESIMPULAN: Obesity")
 
 
-def display_body_result(weightratio):
-    if weightratio < 0.42:
+def display_body_result(waistratio):
+    if waistratio < 0.42:
         st.write("KESIMPULAN: Underweight")
-    elif 0.43 <= weightratio < 0.52:
+    elif 0.43 <= waistratio < 0.52:
         st.write("KESIMPULAN: Normal")
-    elif 0.53 <= weightratio < 0.62:
+    elif 0.53 <= waistratio < 0.62:
         st.write("KESIMPULAN: Overweight")
     else:
         st.write("KESIMPULAN: Obesity")
@@ -82,7 +82,7 @@ def main():
     # navigasi
     selected = option_menu(
         menu_title=None,
-        options=["BMI", "weight to Height Ratio", "Body Fat"],
+        options=["BMI", "waist to Height Ratio", "Body Fat"],
         icons=["star", "ruler", "percent"],
         menu_icon="cast",
         default_index=0,
@@ -103,18 +103,18 @@ def main():
             else:
                 st.write("Please enter valid weight and height.")
 
-    elif selected == "weight to Height Ratio":  # waist height
-        st.header("weight to Height Ratio Calculator")
-        weight = st.number_input(
+    elif selected == "waist to Height Ratio":  # waist height
+        st.header("waist to Height Ratio Calculator")
+        waist = st.number_input(
             "Lebar Pinggang (cm)", min_value=0.0, format="%.2f", key="<waist>")
         height = st.number_input(
             "Tinggi (cm)", min_value=0.0, format="%.2f", key="<height>")
         if st.button("HITUNG!"):
-            if weight > 0 and height > 0:
-                weightratio = calculate_body(weight, height)
+            if waist > 0 and height > 0:
+                waistratio = calculate_body(waist, height)
                 st.write(
-                    f"Rasio weight/height anda adalah: {weightratio:.2f}")
-                display_body_result(weightratio)
+                    f"Rasio waist/height anda adalah: {waistratio:.2f}")
+                display_body_result(waistratio)
             else:
                 st.write("Angka tidak valid!")
 
